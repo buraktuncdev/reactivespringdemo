@@ -40,7 +40,7 @@ public class UserService {
 		return userRepository.findById(userId);
 	}
 
-	public Mono<User> updateUser(Long userId, User user){
+	public Mono<User> updateUser(Integer userId, User user){
 		return userRepository.findById(userId)
 				.flatMap(dbUser -> {
 					dbUser.setAge(user.getAge());
